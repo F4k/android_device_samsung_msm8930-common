@@ -48,12 +48,18 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
+    libdivxdrmdecrypt \
+    libmm-omxcore \
+    libOmxCore \
+    libc2dcolorconvert \
+    libstagefrighthw \
+    libOmxVdec \
+    libOmxVenc \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
-    libdashplayer \
-    libstagefrighthw
+    libdashplayer
 
 # Camera Wrapper
 PRODUCT_PACKAGES += \
