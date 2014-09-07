@@ -52,14 +52,14 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libOmxCore \
     libc2dcolorconvert \
-    libstagefrighthw \
     libOmxVdec \
     libOmxVenc \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
-    libdashplayer
+    libdashplayer \
+    libstagefrighthw
 
 # Camera Wrapper
 PRODUCT_PACKAGES += \
