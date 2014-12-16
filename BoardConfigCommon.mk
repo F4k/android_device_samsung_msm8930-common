@@ -26,7 +26,6 @@ BOARD_USES_FLUENCE_INCALL := true
 BOARD_USES_FLUENCE_FOR_VOIP := true
 BOARD_USES_LEGACY_ALSA_AUDIO := true
 BOARD_USES_SEPERATED_AUDIO_INPUT := true
-COMMON_GLOBAL_CFLAGS += -DLPA_DEFAULT_BUFFER_SIZE=32
 QCOM_CSDCLIENT_ENABLED := false
 TARGET_QCOM_AUDIO_VARIANT := caf
 
@@ -60,6 +59,16 @@ TARGET_QCOM_MEDIA_VARIANT := caf
 COMMON_GLOBAL_CFLAGS += -DQCOM_BSP
 TARGET_USES_QCOM_BSP := true
 
+# Shader cache config options
+# Maximum size of the  GLES Shaders that can be cached for reuse.
+# Increase the size if shaders of size greater than 12KB are used.
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+
+# Maximum GLES shader cache size for each app to store the compiled shader
+# binaries. Decrease the size if RAM or Flash Storage size is a limitation
+# of the device.
+MAX_EGL_CACHE_SIZE := 2048*1024
+
 # Wifi driver
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_HAS_QCOM_WLAN_SDK          := true
@@ -74,5 +83,5 @@ WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 
 # Vold
-BOARD_VOLD_MAX_PARTITIONS := 24
+BOARD_VOLD_MAX_PARTITIONS := 28
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file

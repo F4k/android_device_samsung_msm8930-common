@@ -26,13 +26,18 @@ ifeq ($(BOARD_VENDOR),samsung)
 ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
 ifneq ($(filter expressltexx loganreltexx lt02ltespr melius3gxx meliusltexx \
                 serrano3gxx serranodsdd serranodsxx serranoltebmc serranoltexx \
-                serranoltespr wilcoxltexx,$(TARGET_DEVICE)),)
+                serranoltespr serranolteusc wilcoxltexx,$(TARGET_DEVICE)),)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
 $(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/prima; \
 	ln -sf /data/misc/wifi/WCNSS_qcom_cfg.ini \
-	$(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_qcom_cfg.ini)
+		$(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_qcom_cfg.ini)
 
+$(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wcd9310; \
+	ln -sf /data/misc/audio/wcd9310_anc.bin \
+		$(TARGET_OUT_ETC)/firmware/wcd9310/wcd9310_anc.bin; \
+	ln -sf /data/misc/audio/mbhc.bin \
+		$(TARGET_OUT_ETC)/firmware/wcd9310/wcd9310_mbhc.bin)
 endif
 endif
 endif

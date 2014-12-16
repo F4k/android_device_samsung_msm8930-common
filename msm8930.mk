@@ -82,10 +82,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     wcnss_service
 
-# QRNGD
-PRODUCT_PACKAGES += \
-    qrngd
-
 # qcmediaplayer
 PRODUCT_PACKAGES += \
     qcmediaplayer
